@@ -61,7 +61,7 @@ app.post('/api/v1/papers', (request, response) => {
 
 app.post('/api/v1/papers/:paper_id/footnotes', (request, response) => {
   const footnote = request.body;
-  const paper_id = request.params.paper_id;
+  // const paper_id = request.params.paper_id; // QUESTION: how to handle nested resources?
 
   for (let requiredParameter of ['note']) {
     if (!footnote[requiredParameter]) {
